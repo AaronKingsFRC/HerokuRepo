@@ -10,4 +10,8 @@ class HelloService <Sinatra::Base
   get '/' do
     {:msg => "Hello World"}.to_json
   end
+
+  get '/newfeature' do
+    {:msg => "New Feature is Added"}.to_json
+  end
 end

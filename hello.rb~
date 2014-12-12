@@ -1,4 +1,3 @@
-require 'rubygems'
 require 'sinatra'
 require 'sinatra/base'
 require 'json'
@@ -9,6 +8,10 @@ class HelloService <Sinatra::Base
     end
 
   get '/' do
+    {:msg => "Hello World"}.to_json
+  end
+
+  get '/newfeature' do
     {:msg => "Hello World"}.to_json
   end
 end
