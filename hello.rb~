@@ -8,10 +8,16 @@ class HelloService <Sinatra::Base
     end
 
   get '/' do
-    {:msg => "Hello World"}.to_json
+    params = {"param1" => "info", "param2" => "more info"}
+    json_headers = {"Content-Type" => "application/json", "Accept" => "application/json"}
+    uri = URI.parse("http://herokuforaaron.herokuapp.com")
+    http = Net::HTTP.new(uri.host, uri.port)
+
+    response = http.post(uri.path, params.to_json, json_headers)
+    #{:msg => "Hello World"}.to_json
   end
 
   get '/newfeature' do
-    {:msg => "Hello World"}.to_json
+    {:msg => "New Feature is Added"}.to_json
   end
 end
