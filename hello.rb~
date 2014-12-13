@@ -3,21 +3,19 @@ require 'sinatra/base'
 require 'json'
 
 class HelloService <Sinatra::Base
-    before do
-      content_type :json
-    end
+	before do
+		content_type :json
+	end
 
-  get '/' do
-    params = {"param1" => "info", "param2" => "more info"}
-    json_headers = {"Content-Type" => "application/json", "Accept" => "application/json"}
-    uri = URI.parse("http://herokuforaaron.herokuapp.com")
-    http = Net::HTTP.new(uri.host, uri.port)
+	get '/' do
+		{:msg => "Hello World"}.to_json
+	end
 
-    response = http.post(uri.path, params.to_json, json_headers)
-    #{:msg => "Hello World"}.to_json
-  end
+	get '/newfeature' do
+		{:msg => "New Feature is Added"}.to_json
+	end
 
-  get '/newfeature' do
-    {:msg => "New Feature is Added"}.to_json
-  end
+	def h(name)
+		puts "Hello #{name}!"
+	end
 end
