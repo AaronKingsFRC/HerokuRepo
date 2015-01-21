@@ -3,7 +3,7 @@ require 'sinatra/base'
 require 'json'
 
 class HelloService <Sinatra::Base
-	#hello world 
+
 	before do
 		content_type :json
 	end
@@ -14,6 +14,10 @@ class HelloService <Sinatra::Base
 
 	get '/newfeature' do
 		{:msg => "New Feature is Added"}.to_json
+	end
+
+	get '/newfeature2' do
+		"<a href='/bar'>do something</a>"
 	end
 
 	def h(name)
