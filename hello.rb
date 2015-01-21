@@ -12,14 +12,6 @@ class HelloService <Sinatra::Base
 		{:msg => "Hello World"}.to_json
 	end
 
-	get '/newfeature' do
-		{:msg => "New Feature is Added"}.to_json
-	end
-
-	get '/newfeature2' do
-		"<a href='http://www.google.com/'>do something</a>"
-	end
-
 	def h(name)
 		puts "Hello #{name}!"
 	end
