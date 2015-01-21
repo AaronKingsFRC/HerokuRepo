@@ -17,7 +17,7 @@ class HelloService <Sinatra::Base
 	end
 
 	get '/newfeature2' do
-		"<a href='/bar'>do something</a>"
+		"<a href='http://www.google.com/'>do something</a>"
 	end
 
 	def h(name)
